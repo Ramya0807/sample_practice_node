@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Sample Project</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+</head>
+<body class="container">
+
+    <header>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <span class="glyphicon glyphicon glyphicon-user"></span>
+                        Ramya
+                    </a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>                                     
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/employees">Employees</a></li>
+                    <li><a href="/department">Departments</a></li>
+                    <% if (locals.loggedInUser !== undefined) { %>
+                         
+                        <li>
+                            <a href="/profile">
+                            Hi, <%= locals.loggedInUser.username %>
+                            </a>
+                        </li>
+                        <li><a href="/logout">Logout</a></li>
+                    <% } %>
+                    
+                </ul>
+                
+            </div>
+        </nav>
+    </header>
+
+    <% if (locals.successMessage !== undefined && locals.successMessage.length > 0 ) { %>
+        <div class="alert alert-success">
+            <%= locals.successMessage %>
+        </div>
+    <% } %>
+
+     <% if (locals.errors !== undefined && locals.errors.length > 0) { %>
+        <div class="alert alert-danger">
+            <% for (var error of errors) { %>
+                <%= error %>
+                <br/>
+            <% } %>
+            
+        </div>
+    <% } %>
+    <!--Body portion of the website -->
+    <%- body %>
+</body>
+</html>

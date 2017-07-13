@@ -1,0 +1,29 @@
+<div class="col-sm-6">
+    <h3>
+    Edit Department details - <%=department.id%>
+    </h3>
+    <form action="/department/<%=department.id%>/edit" method="post">
+        <div class="form-group">
+            <label for="dept_No">Emp No</label>
+            <input type="number" name="dept_No" class="form-control" value="<%=department.dept_No%>"/>
+        </div>
+        <div class="form-group">
+            <label for="first_Name">First Name</label>
+            <input type="text" name="first_Name" class="form-control" value="<%=department.first_Name%>"/>
+        </div>
+        <div class="form-group">
+            <label for="last_Name">Last Name</label>
+            <input type="text" name="last_Name" class="form-control" value="<%=department.last_Name%>"/>
+        </div>
+        <div class="form-group">
+            <label for="department">Last Name</label>
+            <input type="text" name="department" class="form-control" value="<%=department.department%>"/>
+        </div>
+        <div class="form-group">
+            <label for="city">Last Name</label>
+            <input type="text" name="city" class="form-control" value="<%=department.city%>"/>
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-sm btn-info"/>
+    </form>
+</div>

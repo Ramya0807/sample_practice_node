@@ -1,0 +1,11 @@
+<div class="jumbotron">
+    <h3>
+        Welcome to the employees of Sample Project
+    </h3>
+    
+    <% if (locals.loggedInUser === undefined) { %>
+    <p>Login or Register with </p>
+        <a href="/login" class="btn btn-sm btn-info">Login</a>
+    <a href="/signup" class="btn btn-sm btn-info">Signup</a>
+    <% } %>
+</div>

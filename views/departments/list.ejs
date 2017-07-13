@@ -1,0 +1,35 @@
+<a href="/department/create" class="btn btn-sm btn-primary">
+  Create New Employee
+</a>
+<br>
+<h4>
+  List of Department Page
+</h4>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Department No</th>
+      <th>Full Name </th>
+      <th>Department</th>
+      <th> City</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% for (var department of departmentList) { %>
+      <tr>
+        <td><%= department.dept_No %></td>
+        <td><%= department.first_Name %> <%= department.last_Name %></td>
+         <td><%= department.department %> 
+          <td><%= department.city %>
+        <td>
+          <a href="/department/<%=department.id%>" class="btn btn-sm btn-primary">View</a>
+          
+          <a href="/department/<%=department.id%>/delete" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
